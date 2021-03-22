@@ -1,17 +1,21 @@
 import React from 'react'
 import './styles.scss'
 
-const ListaRacas = props => {
+import {RacaContext} from '../../App'
+
+const ListaRacas = () => {
+  const {selecionaRaca, racas} = React.useContext(RacaContext)
+  
   return (
     <ul className="lista-racas">
       {
-        props.racas.map(raca => (
+        racas.map(({id, name}) => (
           <li
             className="lista-racas__item"
-            key={raca.id}
-            onClick={() => props.selecionaRaca(raca.name)}
+            key={id}
+            onClick={() => selecionaRaca(name)}
           >
-            {raca.name}
+            {name}
           </li>
         ))
       }
