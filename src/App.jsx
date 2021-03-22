@@ -68,10 +68,10 @@ class App extends React.Component {
     
     render() {
       return (
-        <RacaContext.Provider value={{ status: this.state.status, racas: this.state.racas, selecionaRaca: this.selecionaRaca, racaSelecionada: this.state.racaSelecionada}}>
+        <RacaContext.Provider value={{ status: this.state.status, racas: this.state.racas, selecionaRaca: this.selecionaRaca, raca: this.state.racaSelecionada}}>
           <div className="container">
-            <Cabecalho status={this.state.status} />
-            <Raca raca={this.state.racaSelecionada} />
+            <Cabecalho />
+            <Raca />
             <ListaRacas />
           </div>
         </RacaContext.Provider>

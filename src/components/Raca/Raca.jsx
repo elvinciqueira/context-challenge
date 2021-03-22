@@ -4,16 +4,15 @@ import RacaSelecionada from '../RacaSelecionada'
 import RacaNaoSelecionada from '../RacaNaoSelecionada'
 import {RacaContext} from '../../App'
 
-const Raca = props => {
-  const racaFoiSelecionada = Boolean(props.raca.name)
-  const context = React.useContext(RacaContext)
+const Raca = () => {
+  const {raca} = React.useContext(RacaContext)
+  const racaFoiSelecionada = Boolean(raca.name)
 
-  console.log('context dentro de Raca', context)
 
   return (
     racaFoiSelecionada
     ?
-    <RacaSelecionada {...props} />
+    <RacaSelecionada  />
     :
     <RacaNaoSelecionada />
   )

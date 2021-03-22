@@ -1,8 +1,13 @@
 import React from 'react'
 import './styles.scss'
+import {RacaContext} from '../../App'
 
-const Status = props => (
-  <p className="status">{props.status}</p>
-)
+const Status = () => {
+  const { status } = React.useContext(RacaContext)
+  
+  return (
+    <p className="status">{status}</p>
+  )
+}
 
 export default Status
